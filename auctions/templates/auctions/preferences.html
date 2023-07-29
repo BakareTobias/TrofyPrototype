@@ -1,0 +1,52 @@
+{% extends "auctions/layout.html" %}
+{% load static%}
+
+{% block body %}
+  <script src="{% static 'auctions/preferences.js' %}"></script>
+    <script>
+        function myFunction() {
+          // Declare variables
+          var input, filter, div, li, a, i;
+          input = document.getElementById("mySearch");
+          filter = input.value.toUpperCase();
+          div = document.getElementById("foodSearchBar");
+          li = div.getElementsByClassName("lin");
+        
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("label")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+    </script>
+    <section class="m-1 p-2">
+      <h1 class="d-none" id="user_id">{{user.id}}</h1>
+      <div id="preferencediv" class="container">
+        <h4>Update your preferences</h4>
+        <h5>Check foods you like when you're...</h5>
+            <div>
+              <h5 class="mx-1 productTitle" id="mood" > </h5> 
+            
+              <div id="foodSearchBar" class="btn-group" role="group">
+                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a food">
+                {% for item in categories %}
+                  <div class="lin m-1">
+                    <input type="checkbox"class="btn-check"autocomplete="off" id="{{item.id}}">
+                    <label class="btn btn-outline-primary" for="{{item.id}}" >{{item.Item_Name}}</label> <br>
+
+                  </div>
+                
+                {% endfor %}
+                <input type="button" value="Next" id="nextButton">
+              </div>
+            </div>
+      </div>
+       
+
+        
+    </section>
+{% endblock %}
