@@ -30,6 +30,7 @@ SECRET_KEY = '6ps8j!crjgrxt34cqbqn7x&b3y%(fny8k8nh21+qa)%ws3fh!q'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'trofyprototyperender.onrender.com',
     '127.0.0.1',
     'trofy-4rb3.onrender.com',
     'localhost',
