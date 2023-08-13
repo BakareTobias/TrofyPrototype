@@ -9,13 +9,13 @@ class Category(models.Model):
     Category = models.CharField(max_length=65)
     
     def __str__(self):
-        return f"{self.Category} "
+        return f"{self.Category}"
 
 
 class Listing(models.Model):
     owner = models.ForeignKey(User,on_delete=models.CASCADE,related_name="lister")
     image = models.ImageField(upload_to='images')
-    caption= models.CharField(max_length= 64,default="Image ofListing ")
+    caption= models.CharField(max_length= 65,default="Image ofListing ")
     Item_Name = models.CharField(max_length=64)
     category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name="categories")
     """ Description = models.CharField(max_length=264) """

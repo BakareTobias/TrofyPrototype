@@ -106,10 +106,10 @@ DATABASES={
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'trofy',
-        'USER': 'tobi',
-        'PASSWORD': 'zhSMteRUE0M0vnFzvPjSZvSjw0CCwhcc',
-        'HOST': 'dpg-chn3fam7avj3o316dqv0-a.oregon-postgres.render.com',
+        'NAME': 'trofy2',
+        'USER': 'tobiloba',
+        'PASSWORD': 'qBIurFpgNz5SRZXKo8kgSSIGibJXE2kc',
+        'HOST': 'dpg-cj4mqbpitvpc73cg8ofg-a.oregon-postgres.render.com',
     }
 }
 

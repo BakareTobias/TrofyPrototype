@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded',function () {
     /* ROUTE 6 RETRIEVE USER PRODUCTS BASED ON PREFERENCE  */
     function route6(pref_rating,user_id) {
         var myHeaders = new Headers();
-        myHeaders.append("api_key", 'tk_qFFiCjeOGfpPaiEfVLky');
+        myHeaders.append("api_key", 'tk_IpztBnJfRfUxbpZrzoJT');
       
         var requestOptions = {
           method: 'GET',
@@ -15,33 +15,22 @@ document.addEventListener('DOMContentLoaded',function () {
         fetch(`https://trofy.onrender.com/api/getUserPreference?user=${user_id}&pref_rating=${pref_rating}`, requestOptions)
           .then(response => response.json())
           .then(result => {/* console.log(result) */
-                const suggestions = result.data
+                console.log(result)
+                const suggestions = result["data"]
                 console.log(suggestions)
-                if (suggestions.length == 0){
+               
 
-                    
+                suggestions.forEach(food => {
+                    var nameOfFood = food["Item_Name"]
+                    var url = "/listing/" + food["id"]
                     const div = document.createElement('div')
-                    div.innerHTML = `<h5 class="mx-1" id="productTitle" >No suggestions for this preference </h5> `
+                    div.innerHTML = `<h4 class="mx-1"><span><a href="${url}" id="productTitle" ">${nameOfFood}</a></span></h4> `
                     document.getElementById('oursuggestions').appendChild(div)
 
                     
-                        
-
-                }
-                else{
-                    console.log(suggestions[2]["Item_Name"])
-
-                    suggestions.forEach(food => {
-                        var nameOfFood = food["Item_Name"]
-                        var url = "/listing/" + food["id"]
-                        const div = document.createElement('div')
-                        div.innerHTML = `<h4 class="mx-1"><span><a href="${url}" id="productTitle" ">${nameOfFood}</a></span></h4> `
-                        document.getElementById('oursuggestions').appendChild(div)
-    
-                        
-                        
-                    });
-                }
+                    
+                });
+                
 
             
             }

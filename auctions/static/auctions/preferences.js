@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',function () {
     
- function checkBoxes(pref_rating) {
+ function checkBoxes(pref_rating,mood) {
   var checkedValues = [];
   var checkboxes = (document.getElementsByClassName("btn-check"));
 
@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded',function () {
       }
     }
     console.log(checkedValues)
+    if (checkedValues.length < 1){
+      alert(`You did not select a food preference for ${mood}. Please restart for best results `)
+    }
     preference_list.push({
       "pref_rating": pref_rating,
       "item_pref_list": checkedValues
@@ -30,7 +33,7 @@ document.addEventListener('DOMContentLoaded',function () {
 
 /* ROUTE 5 UPLOAD USER PREFERENCE */
   function uploadPref(user_id,pref_list) {
-    const api_key = "tk_qFFiCjeOGfpPaiEfVLky"
+    const api_key = "tk_IpztBnJfRfUxbpZrzoJT"
     var myHeaders = new Headers();
     myHeaders.append("api_key", api_key);
     myHeaders.append("Content-Type", "application/json");
@@ -59,25 +62,25 @@ document.addEventListener('DOMContentLoaded',function () {
     const user_id = Number(document.getElementById('user_id').innerHTML);
     console.log(user_id)
     var preference_list = []
-    moods = ["Very Sad","Sad","Content","Happy","Very Happy"]
+    moods = ["Very Sad","Sad","Okay","Happy","Very Happy"]
 
 
       document.getElementById('mood').innerHTML= moods[0]
       document.getElementById('nextButton').onclick = function(){
-        checkBoxes(1)
+        checkBoxes(1,moods[0])
 
         
         document.getElementById('mood').innerHTML= moods[1]
         document.getElementById('nextButton').onclick = function(){
-          checkBoxes(2)
+          checkBoxes(2,moods[1])
 
           document.getElementById('mood').innerHTML= moods[2]
           document.getElementById('nextButton').onclick = function(){
-            checkBoxes(3)
+            checkBoxes(3,moods[2])
 
             document.getElementById('mood').innerHTML= moods[3]
             document.getElementById('nextButton').onclick = function(){
-              checkBoxes(4)
+              checkBoxes(4,moods[3])
 
               //CHANGE NEXT BUTTON TO SUBMIT 
               document.getElementById('nextButton').type = 'submit'
@@ -86,8 +89,12 @@ document.addEventListener('DOMContentLoaded',function () {
 
               document.getElementById('mood').innerHTML= moods[4]
               document.getElementById('nextButton').onclick = function(){
-                checkBoxes(5)
+                checkBoxes(5,moods[4])
                 uploadPref(user_id,preference_list)
+                const div = document.createElement('div')
+                document.getElementById('preferencediv').style.display = 'none'
+                div.innerHTML = `<h5 class="mx-1" id="productTitle" >Preferences Uploaded!</h5> `
+                document.getElementById('33pref').appendChild(div)
 
 
 

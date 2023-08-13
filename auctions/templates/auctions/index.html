@@ -27,7 +27,7 @@
                     <div  class="listings card text-center col-md-3 col-5  p-2 mx-1  " >
 
                         <a href="{% url 'listing' listing.id %}" >
-                            <img src="media/{{ listing.image }}" alt="{{ listing.caption }} " id="product_image" class="mb-3 img-fluid" ><br>
+                            <img src="media/{{ listing.image }}" alt=" " id="product_image" class="mb-3 img-fluid" ><br>
                             {{ listing.Item_Name }}
                             <br> Starting price:${{ listing.Starting_price }} 
                         </a>
@@ -36,7 +36,7 @@
                     </div>
                    
                 {%empty%}
-                    All listings have been bought. Come back later
+                    Nothing to see here. Come back later
                 {%endfor%}
 
             </div>
