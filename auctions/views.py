@@ -20,7 +20,7 @@ def login_view(request):
     if request.method == "POST":
 
         # Attempt to sign user in
-        username = request.POST["username"]
+        username = (request.POST["username"]).strip()
         password = request.POST["password"]
         try:
             user = User.objects.get(username=username)
