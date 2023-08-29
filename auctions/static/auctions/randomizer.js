@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded',function () {
           redirect: 'follow'
         };
         console.log(user_id)
+        console.log(pref_rating)
       
         fetch(`https://trofy.onrender.com/api/getUserPreference?user=${user_id}&pref_rating=${pref_rating}`, requestOptions)
           .then(response => response.json())
