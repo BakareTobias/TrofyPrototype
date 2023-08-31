@@ -21,24 +21,26 @@ def login_view(request):
 
         # Attempt to sign user in
         username = (request.POST["username"]).strip()
-        password = request.POST["password"]
+        password_entered = request.POST["password"]
+        
+
         try:
             user = User.objects.get(username=username)
-            if user.check_password(password):
-                return user
-        except User.DoesNotExist:
-            return None
-        # Check if authentication successful
-        if user is not None:
-            login(request, user)
-            return HttpResponseRedirect(reverse("index"))
-        else:
-            print(username,password,user)
-            return render(request, "auctions/login.html", {
-                "message": "Invalid username and/or password."
+            password_stored = user.password
+            if password_stored == password_entered:
+                login(request, user)
+                return HttpResponseRedirect(reverse("index"))
+            else:
+                return render(request, "auctions/login.html", {
+                "message": "Invalid password."
             })
+        except User.DoesNotExist:
+            return render(request, "auctions/login.html", {
+                "message": "There is no account with that username"
+            })
+        
     else:
-        return render(request, "auctions/login.html")
+        return render(request, "auctions/login.html") 
     
 
     """ user = authenticate(request, username=username, password=password)
