@@ -1,17 +1,18 @@
 document.addEventListener('DOMContentLoaded',function () {
-  const api_key = "tk_aFjKcVosELRNlhaIhTzn"
+  const api_key = "tk_vjeQgvtHiRqChNeFbnvK"
 
-
+  
 
 /* ROUTE 1 FETCH API KEY */
-   /* var myHeaders = new Headers();
+/* console.log(2)
+   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
 
 
 
   var raw = JSON.stringify({
-    "db_string": "postgres://tobiloba:qBIurFpgNz5SRZXKo8kgSSIGibJXE2kc@dpg-cj4mqbpitvpc73cg8ofg-a.oregon-postgres.render.com/trofy2",
+    "db_string": "postgres://trofy_database_user:Ora1vP2VKiHmnVEYxWn7Nk3LrJVOPqdk@dpg-clfjf16r45ec738b7d2g-a.oregon-postgres.render.com/trofy_database",
     "db_type": "sql",
     "nameOfDb": "postgresql",
     "groupTable": "auctions_category",
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded',function () {
 
      
     .catch(error => console.log('error', error));
-    }) */ 
+    }) */  
  
 
     

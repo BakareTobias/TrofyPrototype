@@ -106,10 +106,10 @@ DATABASES={
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'trofy2',
-        'USER': 'tobiloba',
-        'PASSWORD': 'qBIurFpgNz5SRZXKo8kgSSIGibJXE2kc',
-        'HOST': 'dpg-cj4mqbpitvpc73cg8ofg-a.oregon-postgres.render.com',
+        'NAME': 'trofy_database',
+        'USER': 'trofy_database_user',
+        'PASSWORD': 'Ora1vP2VKiHmnVEYxWn7Nk3LrJVOPqdk',
+        'HOST': 'dpg-clfjf16r45ec738b7d2g-a.oregon-postgres.render.com',
     }
 }
 

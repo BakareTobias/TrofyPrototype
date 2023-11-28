@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded',function () {
 
 /* ROUTE 5 UPLOAD USER PREFERENCE */
   function uploadPref(user_id,pref_list) {
-    const api_key = "tk_IpztBnJfRfUxbpZrzoJT"
+    const api_key = "tk_vjeQgvtHiRqChNeFbnvK"
     var myHeaders = new Headers();
     myHeaders.append("api_key", api_key);
     myHeaders.append("Content-Type", "application/json");

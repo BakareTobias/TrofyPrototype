@@ -267,7 +267,13 @@ def closeAuction(request,listing_id):
     return HttpResponseRedirect(reverse("profile",args=(listing.owner.id,)))
 
 def randomizer(request):
-    return render(request, "auctions/randomizer.html")
+    categories= len(Category.objects.all())
+    
+
+    return render(request, "auctions/randomizer.html",{
+        "categories":categories,
+
+    })
 
 def checkout(request):
     return render(request, "auctions/checkout.html")

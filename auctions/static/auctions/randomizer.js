@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded',function () {
 
+    /* FUNCTION TO PICK A RANDOM ITEM */
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      
     /* ROUTE 6 RETRIEVE USER PRODUCTS BASED ON PREFERENCE  */
     function route6(pref_rating,user_id) {
         var myHeaders = new Headers();
-        myHeaders.append("api_key", 'tk_IpztBnJfRfUxbpZrzoJT');
+        myHeaders.append("api_key", "tk_vjeQgvtHiRqChNeFbnvK");
       
         var requestOptions = {
           method: 'GET',
@@ -71,6 +76,26 @@ document.addEventListener('DOMContentLoaded',function () {
         document.getElementById('oursuggestions').style.display='block'
 
     }
+    randomButton.onclick = function() {
+        /* pick a random  */
+        cat_num = parseInt(document.getElementById('cat_num').innerHTML);
+        random = getRandomNumber(1, cat_num + 1);
+    
+        rand_link = document.getElementById('rand_link');
+    
+        // Get the dynamic URL from the data-url attribute
+        var dynamicUrl = rand_link.getAttribute('data-url');
+    
+        // Append the random parameter to the URL
+        dynamicUrl += random;
+    
+        // Set the href attribute of the link
+        rand_link.setAttribute('href', dynamicUrl);
+    
+        // Click the link
+        rand_link.click();
+    };
+    
 
 
 
