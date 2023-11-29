@@ -60,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'livereload.middleware.LiveReloadScript',
+    'django.contrib.staticfiles.middleware.StaticFilesMiddleware',
 
 ]
 
@@ -165,6 +166,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 STATIC_DIR = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),
-]
+
+# settings.py
+
+STATIC_ROOT = 'C:\\Users\\TOBILOBA\\Documents\\TrofyPrototype\\static'
