@@ -60,8 +60,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'livereload.middleware.LiveReloadScript',
-    'django.contrib.staticfiles.middleware.StaticFilesMiddleware',
-
+"""     'django.contrib.staticfiles.middleware.StaticFilesMiddleware',
+ """
 ]
 
 ROOT_URLCONF = 'commerce.urls'
